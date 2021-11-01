@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: vuepress-deploy
 on:
   push:
     branches:
@@ -7,17 +7,15 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.1
-      - name: Vuepress deploy
-        run: |
-          npm install
-          npm run docs:build
-        with:
-          provider: pages
-          skip_cleanup: true
-          local_dir: docs/.vuepress/dist
-          github_token: $GITHUB_TOKEN # 在 GitHub 中生成，用于允许 Travis 向你的仓库推送代码。在 Travis 的项目设置页面进行配置，设置为 secure variable
-          keep_history: true
-          on:
-            branch: gh_pages
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Build and Deploy
+      uses: jenkey2011/vuepress-deploy@v2.0.0
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        TARGET_REPO: /el-global-dialog-docs/
+        TARGET_BRANCH: gh_pages
+        BUILD_SCRIPT: yarn && yarn build
+        BUILD_DIR: docs/.vuepress/dist/
+        COMMIT_MESSAGE:  Auto deploy by the Vuepress-deploy
