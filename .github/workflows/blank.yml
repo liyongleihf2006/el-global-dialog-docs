@@ -13,7 +13,6 @@ jobs:
     - name: Build and Deploy
       uses: jenkey2011/vuepress-deploy@v2.0.0
       env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         TARGET_REPO: /el-global-dialog-docs/
         TARGET_BRANCH: gh_pages
         BUILD_SCRIPT: yarn && yarn build
