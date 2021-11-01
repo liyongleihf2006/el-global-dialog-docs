@@ -19,5 +19,5 @@ jobs:
         # uses: jenkey2011/vuepress-deploy@c125854a55a2d3fbe1847e0fc25a4aa662582520
         uses: jenkey2011/vuepress-deploy@v1.8.1
         with:
-          branch: gh-pages # The branch the action should deploy to.
+          TARGET_BRANCH: gh-pages # The branch the action should deploy to.
           BUILD_DIR: docs/.vuepress/dist # The folder the action should deploy.
