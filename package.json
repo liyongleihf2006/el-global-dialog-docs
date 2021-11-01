@@ -1,0 +1,19 @@
+{
+  "name": "el-global-dialog-docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.8.2",
+    "vuepress-plugin-demo-container": "^0.2.0"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "dependencies": {
+    "async-validator": "1.11.5",
+    "el-global-dialog": "^0.1.2",
+    "element-ui": "^2.15.6"
+  }
+}
