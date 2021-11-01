@@ -10,11 +10,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
 
-    - name: Build - Deploy
-      uses: jenkey2011/vuepress-deploy@v2.0.0
+    - name: Build and Deploy
+      uses: jenkey2011/vuepress-deploy@master
       env:
-        TARGET_REPO: /el-global-dialog-docs/
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        TARGET_REPO: liyongleihf2006/el-global-dialog-docs
         TARGET_BRANCH: gh_pages
-        BUILD_SCRIPT: npm install
+        BUILD_SCRIPT: npm && npm run docs:build
         BUILD_DIR: docs/.vuepress/dist/
-        COMMIT_MESSAGE:  Auto deploy by the Vuepress-deploy
