@@ -16,5 +16,5 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         TARGET_REPO: liyongleihf2006/el-global-dialog-docs
         TARGET_BRANCH: gh_pages
-        BUILD_SCRIPT: npm && npm run docs:build
+        BUILD_SCRIPT: npm run docs:build
         BUILD_DIR: docs/.vuepress/dist/
