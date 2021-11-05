@@ -1,7 +1,10 @@
 # 介绍
 
 通过`this.$dialog`的形式使用`el-dialog`
-
+### 安装
+```
+npm install --save el-global-dialog
+```
 ### 使用方法
 ``` js {2}
 // 引入
